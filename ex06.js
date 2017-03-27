@@ -50,4 +50,29 @@
 
 // getHumanTypeByAge(140);
 
+/*
+console.log(getHumanTypeByAge(-5));
+console.log(getHumanTypeByAge(6));
+console.log(getHumanTypeByAge(17));
+console.log(getHumanTypeByAge(33));
+console.log(getHumanTypeByAge(140));
+*/
+
 //  écrire votre code sous ce commentaire
+
+function getHumanTypeByAge(number){
+        
+    switch(true){
+        case (number < 12 && number >= 0):
+            return 'enfant';
+            break;
+        case (number >= 12 && number < 18) :
+            return 'ado';
+            break;
+        case (number >= 18 && number < 124):
+            return 'adulte';
+            break;
+        default:
+            return "Impossible... ou encore jamais vu";
+    }
+}
