@@ -24,3 +24,12 @@
 // isEvenConcat(5);
 
 //  écrire votre code sous ce commentaire
+
+function isEvenConcat(number){
+    if(number % 2 === 0){
+        return 'Le nombre ' + number + ' est pair';
+    }
+    else if(number % 2 === 1) {
+        return 'Le nombre ' + number + ' est impair';        
+    }
+}
