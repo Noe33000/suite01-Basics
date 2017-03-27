@@ -39,3 +39,27 @@
 // ]);
 
 //  écrire votre code sous ce commentaire
+
+function shoppingList (arrayInArray){
+    var nbOfArrays = arrayInArray.length;
+    var result = {};
+    for(i=0;i < nbOfArrays; i++){
+        for(j=0;j < arrayInArray[i].length; j++){
+            var fruit = arrayInArray[i][j];
+            if(result[fruit] === 0 || typeof(result[fruit]) == 'undefined'){
+                result[fruit] = 1;
+            }
+            else if(true) {
+               result[fruit]++;
+            }
+        }        
+    }
+    return result;
+}
+console.log(shoppingList([
+     ["orange", "orange", "kiwi", "ananas"],
+     ["kiwi", "ananas", "banane", "prune"],
+     ["orange", "orange", "orange", "orange"],
+     ["orange", "orange", "kiwi", "kiwi"],
+     ["prune", "banane", "pamplemousse", "ananas"]
+]));
