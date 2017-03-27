@@ -18,3 +18,21 @@
 
 */
 
+function getPerson(firstName, lastName, age){
+    var informations = {
+        fullName: firstName + ' ' + lastName,
+        age: age,
+        isAdult: function(age){
+            if (age => 0 && age < 18){
+                return 'mineur';
+            }
+            else if (age => 18 && age < 124){
+                return 'majeur';
+            }
+            else{
+                return 'Impossible... ou encore jamais vu';
+            }
+        }
+    }
+    return informations;
+};
