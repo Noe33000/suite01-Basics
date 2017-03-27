@@ -31,3 +31,19 @@
 
 //  écrire votre code sous ce commentaire
 
+function isEven(number) {
+    if(number % 2 === 0){
+        return 1;
+    }
+    else if(number % 2 === 1) {
+        return 0;
+    }
+}
+
+function isAllEven(arrayParam){
+    var result = 0;    
+    for(i = 0; i < arrayParam.length; i++){
+        result += arrayParam[i];   
+    }
+    return isEven(result);
+}
