@@ -24,3 +24,12 @@
 // isEven(5);
 
 //  écrire votre code sous ce commentaire
+
+function isEven(numbre) {
+    if(numbre % 2 === 0){
+        return 1;
+    }
+    else if(numbre % 2 === 1) {
+        return 0;
+    }
+}
