@@ -144,34 +144,36 @@ function evalExpr(number1, number2, operator){
 
 function generateCalculs(numberOfcalculs){
     for(i = 0; i < numberOfcalculs; i++){
-        let nbre = getSign();
-        let number1 = getRandNum(); 
-        let number2 = getRandNum();
-        let result = 0; 
+        var nbre = getSign();
+        var number1 = getRandNum(); 
+        var number2 = getRandNum();
+        var sign = "";
+        var result = 0;
         
         switch (true){        
-            case (nbre == 0):
+            case (nbre === 0):
                 result = plus(number1, number2); 
-                return result;
+                sign = "+";
                 break;
-            case (nbre == 1):
+            case (nbre === 1):
                 result = moins(number1, number2); 
-                return result;
+                sign = "-";
                 break;
-            case (nbre == 2):
+            case (nbre === 2):
                 result = fois(number1, number2); 
-                return result;
+                sign = "*";
                 break;
-            case (nbre == 3):
+            case (nbre === 3):
                 result = divi(number1, number2); 
-                return result;
+                sign = "/";
                 break;
-            case (nbre == 4):
+            case (nbre === 4):
                 result = rest(number1, number2); 
-                return result;
+                sign = "%";
                 break;
         }
+            var final = number1 + " " + sign + " " + number2 + " = " + result;
+            console.log(final);
     }
-}
-
-console.log(generateCalculs(1));
+};
+generateCalculs(5);
