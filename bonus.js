@@ -69,41 +69,56 @@ document.getElementById("submit").addEventListener("click", function(event){
     event.preventDefault();    
 });
 
+function showCalculs(zone, calcul){
+    return zone.innerHTML += "<li>" + calcul + "</li>";
+}
+
 function generateCalculs(){
-    console.log("test");
     numberOfcalculs = document.getElementById('nbreCalculs').value;
-    for(i = 0; i < numberOfcalculs; i++){
-        var nbre = getSign();
-        var number1 = getRandNum(); 
-        var number2 = getRandNum();
-        var sign = "";
-        var result = 0;
-        
-        switch (true){        
-            case (nbre === 0):
-                result = plus(number1, number2); 
-                sign = "+";
-                break;
-            case (nbre === 1):
-                result = moins(number1, number2); 
-                sign = "-";
-                break;
-            case (nbre === 2):
-                result = fois(number1, number2); 
-                sign = "*";
-                break;
-            case (nbre === 3):
-                result = divi(number1, number2); 
-                sign = "/";
-                break;
-            case (nbre === 4):
-                result = rest(number1, number2); 
-                sign = "%";
-                break;
+    if(!(parseInt(numberOfcalculs))){
+        alert("Veuillez entrer un chiffre entier !");
+    }else{
+        for(i = 0; i < numberOfcalculs; i++){
+            var nbre = getSign();
+            var number1 = getRandNum(); 
+            var number2 = getRandNum();
+            var sign = "";
+            var result = 0;
+            var tokenLoop = numberOfcalculs;
+            
+            switch (true){        
+                case (nbre === 0):
+                    result = plus(number1, number2); 
+                    sign = "+";
+                    break;
+                case (nbre === 1):
+                    result = moins(number1, number2); 
+                    sign = "-";
+                    break;
+                case (nbre === 2):
+                    result = fois(number1, number2); 
+                    sign = "*";
+                    break;
+                case (nbre === 3):
+                    result = divi(number1, number2); 
+                    sign = "/";
+                    break;
+                case (nbre === 4):
+                    result = rest(number1, number2); 
+                    sign = "%";
+                    break;
+            }
+            var final = number1 + " " + sign + " " + number2 + " = " + result;
+            var zoneCalculs = document.getElementById('calculsArea');
+            function loop(){
+                tokenLoop--;
+                console.log('test');
+                if(tokenLoop > 0){
+                    setTimeout(showCalculs(zoneCalculs, final), 150);
+                }
+            }
+            loop();
         }
-        var final = number1 + " " + sign + " " + number2 + " = " + result;
-        console.log(final);
+            document.getElementById("formCalcul").reset();
     }
 };
-// setTimeout(generateCalculs(5), 50000})
-// setTimeout(generateCalculs(5),500000);
