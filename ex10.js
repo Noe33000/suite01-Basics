@@ -19,14 +19,11 @@
 */
 function isAdult(age){
     console.log(age);
-    if (age > 0 && age < 18){
-        return 'mineur';
-    }
-    else if (age >= 18 && age < 124){
-        return 'majeur';
+    if (age > 18){
+        return true;
     }
     else{
-        return 'Impossible... ou encore jamais vu';
+        return false;
     }
 }
 

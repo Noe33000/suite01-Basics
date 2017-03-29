@@ -73,6 +73,6 @@ function getHumanTypeByAge(number){
             return 'adulte';
             break;
         default:
-            return "Impossible... ou encore jamais vu";
+            return "impossible... ou encore jamais vu";
     }
 }
