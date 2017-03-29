@@ -27,9 +27,9 @@
 
 function isEvenConcat(number){
     if(number % 2 === 0){
-        return 'Le nombre ' + number + ' est pair';
+        return number + ' est pair';
     }
     else if(number % 2 === 1) {
-        return 'Le nombre ' + number + ' est impair';        
+        return number + ' est impair';        
     }
 }

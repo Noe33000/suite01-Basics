@@ -104,7 +104,7 @@ function evalExpr(number1, number2, operator){
             return fois(number1, number2);
             break;
         case (number2 == 0 && operator === '/'):
-            return 'Impossible de diviser par 0';
+            return 0;
             break;
         case (operator === '/'):
             return divi(number1, number2);
