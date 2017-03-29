@@ -45,5 +45,10 @@ function isAllEven(arrayParam){
     for(i = 0; i < arrayParam.length; i++){
         result += arrayParam[i];   
     }
-    return isEven(result);
+    if(result < 0){
+        return 0;
+    }
+    else{
+        return isEven(result);
+    }
 }
