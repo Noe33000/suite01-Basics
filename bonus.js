@@ -110,14 +110,7 @@ function generateCalculs(){
             }
             var final = number1 + " " + sign + " " + number2 + " = " + result;
             var zoneCalculs = document.getElementById('calculsArea');
-            function loop(){
-                tokenLoop--;
-                console.log('test');
-                if(tokenLoop > 0){
-                    setTimeout(showCalculs(zoneCalculs, final), 150);
-                }
-            }
-            loop();
+            setInterval(showCalculs(zoneCalculs, final), 150);
         }
             document.getElementById("formCalcul").reset();
     }

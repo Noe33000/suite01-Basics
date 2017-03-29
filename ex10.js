@@ -17,22 +17,25 @@
         - une fonction "isAdult" pour tester si la personne est majeur;
 
 */
+function isAdult(age){
+    console.log(age);
+    if (age > 0 && age < 18){
+        return 'mineur';
+    }
+    else if (age >= 18 && age < 124){
+        return 'majeur';
+    }
+    else{
+        return 'Impossible... ou encore jamais vu';
+    }
+}
 
 function getPerson(firstName, lastName, age){
     var informations = {
         fullName: firstName + ' ' + lastName,
         age: age,
-        isAdult: function(age){
-            if (age => 0 && age < 18){
-                return 'mineur';
-            }
-            else if (age => 18 && age < 124){
-                return 'majeur';
-            }
-            else{
-                return 'Impossible... ou encore jamais vu';
-            }
-        }
+        isAdult: isAdult(age)
     }
     return informations;
 };
+console.log(getPerson("toto","tata", 44));
