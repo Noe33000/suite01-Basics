@@ -135,9 +135,7 @@ function evalExpr(number1, number2, operator){
  function getRandSign(){
      return Math.floor(Math.random() * 5);
  }
- for(i=0;i<30;i++){
-    console.log(getRandNum());
- }
+
  /*
     Vérification STEP 2
 
