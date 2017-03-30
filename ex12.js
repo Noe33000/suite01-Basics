@@ -145,7 +145,7 @@ function evalExpr(number1, number2, operator){
 
 function generateCalculs(numberOfcalculs){
     for(i = 0; i < numberOfcalculs; i++){
-        var nbre = getSign();
+        var nbre = getRandSign();
         var number1 = getRandNum(); 
         var number2 = getRandNum();
         var sign = "";
@@ -178,4 +178,4 @@ function generateCalculs(numberOfcalculs){
     }
 };
 
-// setTimeout(generateCalculs(5), 500000);
+generateCalculs(5);
