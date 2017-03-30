@@ -73,8 +73,36 @@ function showCalculs(zone, calcul){
     return zone.innerHTML += "<li>" + calcul + "</li>";
 }
 
+function selectSign(nbre){
+    var sign = "";    
+    switch (true){        
+        case (nbre === 0):
+            result = plus(number1, number2); 
+            sign = "+";
+            break;
+        case (nbre === 1):
+            result = moins(number1, number2); 
+            sign = "-";
+            break;
+        case (nbre === 2):
+            result = fois(number1, number2); 
+            sign = "*";
+            break;
+        case (nbre === 3):
+            result = divi(number1, number2); 
+            sign = "/";
+            break;
+        case (nbre === 4):
+            result = rest(number1, number2); 
+            sign = "%";
+            break;
+    }
+    return sign;
+}
+
 function generateCalculs(){
     numberOfcalculs = document.getElementById('nbreCalculs').value;
+    var zoneCalculs = document.getElementById('calculsArea');
     if(!(parseInt(numberOfcalculs))){
         alert("Veuillez entrer un chiffre entier !");
     }else{
@@ -82,35 +110,11 @@ function generateCalculs(){
             var nbre = getSign();
             var number1 = getRandNum(); 
             var number2 = getRandNum();
-            var sign = "";
             var result = 0;
-            var tokenLoop = numberOfcalculs;
-            
-            switch (true){        
-                case (nbre === 0):
-                    result = plus(number1, number2); 
-                    sign = "+";
-                    break;
-                case (nbre === 1):
-                    result = moins(number1, number2); 
-                    sign = "-";
-                    break;
-                case (nbre === 2):
-                    result = fois(number1, number2); 
-                    sign = "*";
-                    break;
-                case (nbre === 3):
-                    result = divi(number1, number2); 
-                    sign = "/";
-                    break;
-                case (nbre === 4):
-                    result = rest(number1, number2); 
-                    sign = "%";
-                    break;
-            }
+            var sign = getSign(nbre);
             var final = number1 + " " + sign + " " + number2 + " = " + result;
-            var zoneCalculs = document.getElementById('calculsArea');
-            setInterval(showCalculs(zoneCalculs, final), 150);
+            
+            zoneCalculs.innerHTML += "<li>" + final + "</li>";
         }
             document.getElementById("formCalcul").reset();
     }

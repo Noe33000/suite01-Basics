@@ -130,10 +130,13 @@ function evalExpr(number1, number2, operator){
 */
 
  function getRandNum(){
-     return Math.floor(Math.random() * 10000);
+     return Math.floor(Math.random() * (900 - 100 + 1) + 100) ;
  }
- function getSign(){
-     return Math.floor(getRandNum() / 2000);
+ function getRandSign(){
+     return Math.floor(Math.random() * 5);
+ }
+ for(i=0;i<30;i++){
+    console.log(getRandNum());
  }
  /*
     Vérification STEP 2
