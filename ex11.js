@@ -40,19 +40,28 @@
 
 //  écrire votre code sous ce commentaire
 
-function shoppingList (arrayInArray){
-    var nbOfArrays = arrayInArray.length;
+function shoppingList (arraysInArray){
+    var nbOfArrays = arraysInArray.length;
     var result = {};
+    
     for(i=0;i < nbOfArrays; i++){
-        for(j=0;j < arrayInArray[i].length; j++){
-            var fruit = arrayInArray[i][j];
-            if(result[fruit] === 0 || typeof(result[fruit]) == 'undefined'){
+
+        let actualArray = arraysInArray[i];
+
+        for(j=0; j < actualArray.length; j++){
+        
+            var fruit = actualArray[j];
+        
+            if(typeof(result[fruit]) == 'undefined'){
                 result[fruit] = 1;
             }
-            else if(true) {
+        
+            else{
                result[fruit]++;
             }
-        }        
+
+        }
+
     }
     return result;
 }

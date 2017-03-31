@@ -174,8 +174,6 @@ function generateCalculs(numberOfcalculs){
                 break;
         }
             var final = number1 + " " + sign + " " + number2 + " = " + result;
-            console.log(final);
     }
 };
 
-generateCalculs(5);
